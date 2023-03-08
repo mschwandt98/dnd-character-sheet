@@ -1,0 +1,15 @@
+.angular/
+.vscode/
+dist/
+frontend/assets
+**/*.md
+**/*.svg
+**/*.ejs
+**/*.png
+**/*.eot
+**/*.woff
+**/*.ttf
+**/*.gif
+**/*.jpg
+**/*.jpeg
+package-lock.json

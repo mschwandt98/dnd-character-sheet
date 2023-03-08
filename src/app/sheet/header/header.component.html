@@ -1,0 +1,82 @@
+<header>
+    <img
+        src="assets/Header.svg"
+        alt=""
+    />
+    <img
+        id="dnd-logo"
+        src="assets/Dungeons & Dragons.svg"
+        alt="Dungeons & Dragons Logo"
+    />
+    <label for="character-name">Character Name</label>
+    <input
+        type="text"
+        id="character-name"
+        [(ngModel)]="data.CharacterName"
+    />
+    <div class="character-infos">
+        <div>
+            <select
+                id="class"
+                [(ngModel)]="data.Class"
+            >
+                <option
+                    *ngFor="let class of classes | keyvalue"
+                    [value]="class.key"
+                    [selected]="class.key === data.Class"
+                >
+                    {{ class.value }}
+                </option>
+            </select>
+            <label for="class">Class & Level</label>
+        </div>
+        <div>
+            <input
+                type="text"
+                id="background"
+                [(ngModel)]="data.Background"
+            />
+            <label for="background">Background</label>
+        </div>
+        <div>
+            <input
+                type="text"
+                id="player-name"
+                [(ngModel)]="data.PlayerName"
+            />
+            <label for="player-name">Player Name</label>
+        </div>
+        <div>
+            <select
+                id="race"
+                [(ngModel)]="data.Race"
+            >
+                <option
+                    *ngFor="let race of races | keyvalue"
+                    [value]="race.key"
+                    [selected]="race.key === data.Race"
+                >
+                    {{ race.value }}
+                </option>
+            </select>
+            <label for="race">Race</label>
+        </div>
+        <div>
+            <input
+                type="text"
+                id="alignment"
+                [(ngModel)]="data.Alignment"
+            />
+            <label for="alignment">Alignment</label>
+        </div>
+        <div>
+            <input
+                type="number"
+                id="experience-points"
+                min="0"
+                [(ngModel)]="data.ExperiencePoints"
+            />
+            <label for="experience-points">Experience Points</label>
+        </div>
+    </div>
+</header>
