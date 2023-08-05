@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
@@ -10,16 +10,12 @@ import CharacterSheet from '../models/CharacterSheet';
     templateUrl: './options.component.html',
     styleUrls: ['./options.component.scss']
 })
-export class OptionsComponent implements OnInit {
+export class OptionsComponent {
     @ViewChild('optionsDialog', { static: true }) dialog!: ElementRef<HTMLDialogElement>;
 
     downloadJsonHref: SafeUrl | null = null;
 
     constructor(private sanitizer: DomSanitizer, private data: DataService) {}
-
-    ngOnInit() {
-        this.openDialog();
-    }
 
     closeDialog() {
         this.dialog.nativeElement.close();
