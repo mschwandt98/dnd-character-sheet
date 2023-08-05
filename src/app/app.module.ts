@@ -27,6 +27,7 @@ import { FeaturesAndTraitsComponent } from './sheet/features-and-traits/features
 import { EquipmentAndCharacterNotesComponent } from './sheet/equipment-and-character-notes/equipment-and-character-notes.component';
 import { OtherProficienciesAndLanguagesComponent } from './sheet/other-proficiencies-and-languages/other-proficiencies-and-languages.component';
 import { ProficientPipe } from './sheet/abilities/skills/proficient.pipe';
+import { OptionsComponent } from './options/options.component';
 
 @NgModule({
     declarations: [
@@ -49,7 +50,8 @@ import { ProficientPipe } from './sheet/abilities/skills/proficient.pipe';
         FeaturesAndTraitsComponent,
         EquipmentAndCharacterNotesComponent,
         OtherProficienciesAndLanguagesComponent,
-        ProficientPipe
+        ProficientPipe,
+        OptionsComponent
     ],
     imports: [AppRoutingModule, BrowserModule, FormsModule],
     providers: [

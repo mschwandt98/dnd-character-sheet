@@ -111,7 +111,7 @@ export default class CharacterSheet {
 
     // Skills ------------------------------------------------------------------
 
-    // TODO: Funktioniert aktuell nicht
+    // TODO: Sortierung funktioniert aktuell nicht
     get Skills(): Skill.Skill[] {
         let skills = [
             ...this.Strength.Skills,

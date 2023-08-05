@@ -15,7 +15,7 @@ export class DataService extends CharacterSheet {
 
         // Alle 10 Sekunden den aktuellen Charakterbogen im localStorage speichern
         interval(10000).subscribe(() => {
-            localStorage.setItem('characterSheet', this.getExportData());
+            this.saveLocal();
         });
     }
 
@@ -105,5 +105,9 @@ export class DataService extends CharacterSheet {
         this.FeaturesAndTraits = data.FeaturesAndTraits;
         this.OtherProficienciesAndLanguages = data.OtherProficienciesAndLanguages;
         this.Notes = data.Notes;
+    }
+
+    saveLocal() {
+        localStorage.setItem('characterSheet', this.getExportData());
     }
 }

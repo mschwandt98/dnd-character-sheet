@@ -1,13 +1,3 @@
-<input
-    type="file"
-    (change)="loadCharacterSheet($event)"
-    accept="application/json"
-/>
-<a
-    [href]="downloadJsonHref"
-    download="dnd-character-sheet.json"
-    (click)="saveCharacterSheet()"
->
-    CharacterSheet herunterladen
-</a>
+<h1>DnD Character Sheet</h1>
+<dnd-options></dnd-options>
 <dnd-sheet></dnd-sheet>
