@@ -9,19 +9,19 @@
     >
         <label>
             <input
-                [id]="ability.constructor.name + 'SavingThrowProf'"
+                [id]="ability.Name + 'SavingThrowProf'"
                 type="checkbox"
                 [(ngModel)]="ability.SavingThrows"
             />
         </label>
         <input
-            [id]="ability.constructor.name + 'SavingThrow'"
+            [id]="ability.Name + 'SavingThrow'"
             [value]="ability.Modifier"
             type="number"
             readonly
             tabIndex="-1"
         />
-        <label [for]="ability.constructor.name + 'SavingThrow'">{{ ability.constructor.name }}</label>
+        <label [for]="ability.Name + 'SavingThrow'">{{ ability.Name }}</label>
     </li>
 </ul>
 <div class="component-name">Saving Throws</div>

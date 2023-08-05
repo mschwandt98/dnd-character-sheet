@@ -5,6 +5,8 @@ export abstract class Ability {
         return Math.floor((this.Score - 10) / 2);
     }
 
+    abstract readonly Name: string;
+
     SavingThrows: number = 0;
 
     private score: number = 0;
@@ -28,6 +30,8 @@ export abstract class Ability {
 }
 
 export class Strength extends Ability {
+    readonly Name: string = 'Strength';
+
     constructor() {
         super();
         this.skills.push(new Skill.Athletics());
@@ -35,6 +39,8 @@ export class Strength extends Ability {
 }
 
 export class Dexterity extends Ability {
+    readonly Name: string = 'Dexterity';
+
     constructor() {
         super();
         this.skills.push(new Skill.Acrobatics());
@@ -43,9 +49,13 @@ export class Dexterity extends Ability {
     }
 }
 
-export class Constitution extends Ability {}
+export class Constitution extends Ability {
+    readonly Name: string = 'Constitution';
+}
 
 export class Intelligence extends Ability {
+    readonly Name: string = 'Intelligence';
+
     constructor() {
         super();
         this.skills.push(new Skill.Arcana());
@@ -57,6 +67,8 @@ export class Intelligence extends Ability {
 }
 
 export class Wisdom extends Ability {
+    readonly Name: string = 'Wisdom';
+
     constructor() {
         super();
         this.skills.push(new Skill.AnimalHandling());
@@ -68,6 +80,8 @@ export class Wisdom extends Ability {
 }
 
 export class Charisma extends Ability {
+    readonly Name: string = 'Charisma';
+
     constructor() {
         super();
         this.skills.push(new Skill.Deception());

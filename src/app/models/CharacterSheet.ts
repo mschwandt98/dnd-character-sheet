@@ -36,7 +36,7 @@ export default class CharacterSheet {
     Level: number = 1;
 
     get PassivePerception(): number {
-        const perception = this.Skills.find((skill) => skill.constructor.name === 'Perception');
+        const perception = this.Skills.find((skill) => skill.Name === Skill.Perception.name);
         if (perception?.IsProficient) {
             return 10 + this.ProficiencyBonus + this.Wisdom.Modifier;
         }

@@ -3,51 +3,77 @@ export abstract class Skill {
 
     readonly Slug: string = this.constructor.name;
 
-    get Name(): string {
-        return this.constructor.name;
-    }
+    abstract readonly Name: string;
 }
 
-export class Acrobatics extends Skill {}
+export class Acrobatics extends Skill {
+    readonly Name: string = 'Acrobatics';
+}
 
 export class AnimalHandling extends Skill {
-    override get Name(): string {
-        return 'Animal Handling';
-    }
+    readonly Name: string = 'Animal Handling';
 }
 
-export class Arcana extends Skill {}
+export class Arcana extends Skill {
+    readonly Name: string = 'Arcana';
+}
 
-export class Athletics extends Skill {}
+export class Athletics extends Skill {
+    readonly Name: string = 'Athletics';
+}
 
-export class Deception extends Skill {}
+export class Deception extends Skill {
+    readonly Name: string = 'Deception';
+}
 
-export class History extends Skill {}
+export class History extends Skill {
+    readonly Name: string = 'History';
+}
 
-export class Insight extends Skill {}
+export class Insight extends Skill {
+    readonly Name: string = 'Insight';
+}
 
-export class Intimidation extends Skill {}
+export class Intimidation extends Skill {
+    readonly Name: string = 'Intimidation';
+}
 
-export class Investigation extends Skill {}
+export class Investigation extends Skill {
+    readonly Name: string = 'Investigation';
+}
 
-export class Medicine extends Skill {}
+export class Medicine extends Skill {
+    readonly Name: string = 'Medicine';
+}
 
-export class Nature extends Skill {}
+export class Nature extends Skill {
+    readonly Name: string = 'Nature';
+}
 
-export class Perception extends Skill {}
+export class Perception extends Skill {
+    readonly Name: string = 'Perception';
+}
 
-export class Performance extends Skill {}
+export class Performance extends Skill {
+    readonly Name: string = 'Performance';
+}
 
-export class Persuasion extends Skill {}
+export class Persuasion extends Skill {
+    readonly Name: string = 'Persuasion';
+}
 
-export class Religion extends Skill {}
+export class Religion extends Skill {
+    readonly Name: string = 'Religion';
+}
 
 export class SleightOfHand extends Skill {
-    override get Name(): string {
-        return 'Sleight of Hand';
-    }
+    readonly Name: string = 'Sleight of Hand';
 }
 
-export class Stealth extends Skill {}
+export class Stealth extends Skill {
+    readonly Name: string = 'Stealth';
+}
 
-export class Survival extends Skill {}
+export class Survival extends Skill {
+    readonly Name: string = 'Survival';
+}
