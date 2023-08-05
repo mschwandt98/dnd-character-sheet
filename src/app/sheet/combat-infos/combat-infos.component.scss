@@ -1,0 +1,38 @@
+div {
+    display: grid;
+    gap: 0 1vw;
+    grid-template-areas:
+        'armor-class armor-class initiative initiative speed speed'
+        'hit-points hit-points hit-points hit-points hit-points hit-points'
+        'hit-dice hit-dice hit-dice death-saves death-saves death-saves';
+    grid-template-columns: repeat(6, 1fr);
+
+    > * {
+        display: block;
+        position: relative;
+    }
+}
+
+dnd-armor-class {
+    grid-area: armor-class;
+}
+
+dnd-initiative {
+    grid-area: initiative;
+}
+
+dnd-speed {
+    grid-area: speed;
+}
+
+dnd-hit-points {
+    grid-area: hit-points;
+}
+
+dnd-hit-dice {
+    grid-area: hit-dice;
+}
+
+dnd-death-saves {
+    grid-area: death-saves;
+}

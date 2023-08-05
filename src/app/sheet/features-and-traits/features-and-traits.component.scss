@@ -1,0 +1,25 @@
+:host {
+    position: relative;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+label,
+textarea {
+    position: absolute;
+}
+
+textarea {
+    inset: 0 0 7%;
+    padding: 10% 8% 5%;
+}
+
+label {
+    right: 12%;
+    bottom: 3%;
+    left: 12%;
+    text-align: center;
+}

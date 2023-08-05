@@ -1,0 +1,21 @@
+<img
+    src="assets/Box Rectangle.svg"
+    alt="Hit Dice"
+/>
+<div class="max-hit-dice">
+    <label for="max-hit-dice">Total</label>
+    <input
+        type="number"
+        id="max-hit-dice"
+        min="0"
+        [(ngModel)]="data.MaxHitDice"
+    />
+</div>
+<input
+    type="number"
+    id="current-hit-dice"
+    [max]="data.MaxHitDice"
+    min="0"
+    [(ngModel)]="data.CurrentHitDice"
+/>
+<label for="current-hit-dice">Hit Dice</label>

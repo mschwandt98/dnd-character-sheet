@@ -1,7 +1,12 @@
-<button
-    type="button"
-    (click)="logCharacterSheet()"
+<input
+    type="file"
+    (change)="loadCharacterSheet($event)"
+/>
+<a
+    [href]="downloadJsonHref"
+    download="dnd-character-sheet.json"
+    (click)="saveCharacterSheet()"
 >
-    Loggen
-</button>
+    CharacterSheet herunterladen
+</a>
 <dnd-sheet></dnd-sheet>

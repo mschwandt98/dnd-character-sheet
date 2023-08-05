@@ -1,0 +1,43 @@
+:host {
+    display: block;
+    position: relative;
+}
+
+input,
+label {
+    position: absolute;
+}
+
+label {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    top: 10%;
+    right: 6%;
+    bottom: 90%;
+    left: 6%;
+}
+
+input {
+    background-color: transparent;
+    border: 0;
+
+    &.score {
+        font-size: 5vw;
+        text-align: center;
+        top: 12%;
+        right: 6%;
+        bottom: 33.5%;
+        left: 6%;
+    }
+
+    &.modifier {
+        border-radius: 100%;
+        font-size: 2vw;
+        text-align: center;
+        top: 68.5%;
+        right: 26%;
+        bottom: 3%;
+        left: 26%;
+    }
+}

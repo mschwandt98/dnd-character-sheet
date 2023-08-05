@@ -1,0 +1,36 @@
+<div class="current-hit-points">
+    <img
+        src="assets/HP Top.svg"
+        alt="Current Hit Points"
+    />
+    <div class="max-hit-points">
+        <label for="max-hit-points">Maximum Hit Points</label>
+        <input
+            [(ngModel)]="data.MaxHitPoints"
+            id="max-hit-points"
+            type="number"
+            min="0"
+        />
+    </div>
+    <input
+        [(ngModel)]="data.CurrentHitPoints"
+        id="current-hit-points"
+        type="number"
+        [max]="data.MaxHitPoints"
+        min="0"
+    />
+    <label for="current-hit-points">Current Hit Points</label>
+</div>
+<div class="temporary-hit-points">
+    <img
+        src="assets/HP Bottom.svg"
+        alt="Temporary Hit Points"
+    />
+    <input
+        [(ngModel)]="data.TemporaryHitPoints"
+        id="temporary-hit-points"
+        type="number"
+        min="0"
+    />
+    <label for="temporary-hit-points">Temporary Hit Points</label>
+</div>

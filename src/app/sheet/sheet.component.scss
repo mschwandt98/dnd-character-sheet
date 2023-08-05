@@ -1,5 +1,52 @@
 :host {
     aspect-ratio: 7 / 10;
-    display: block;
-    padding: 1rem;
+    display: grid;
+    gap: 2.5vw;
+    grid-template-areas:
+        'header header header'
+        'abilities combat-infos notes'
+        'abilities attacks-and-spellcasting features-and-traits'
+        'other-proficiencies-and-languages equipment-and-character-notes equipment-and-character-notes';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto 1fr 1fr;
+
+    > * {
+        min-width: 0;
+    }
+
+    @media not print {
+        padding: 2vw;
+    }
+}
+
+dnd-header {
+    grid-area: header;
+}
+
+dnd-abilities {
+    grid-area: abilities;
+}
+
+dnd-combat-infos {
+    grid-area: combat-infos;
+}
+
+dnd-notes {
+    grid-area: notes;
+}
+
+dnd-attacks-and-spellcasting {
+    grid-area: attacks-and-spellcasting;
+}
+
+dnd-features-and-traits {
+    grid-area: features-and-traits;
+}
+
+dnd-equipment-and-character-notes {
+    grid-area: equipment-and-character-notes;
+}
+
+dnd-other-proficiencies-and-languages {
+    grid-area: other-proficiencies-and-languages;
 }

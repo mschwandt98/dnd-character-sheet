@@ -1,7 +1,7 @@
 import Classes from '../enums/Classes';
 import Races from '../enums/Races';
-import Skills from '../enums/Skills';
 
+import * as Skill from './Skill';
 import { Charisma, Constitution, Dexterity, Intelligence, Strength, Wisdom } from './Ability';
 
 export default class CharacterSheet {
@@ -17,12 +17,18 @@ export default class CharacterSheet {
 
     ExperiencePoints: number = 0;
 
-    private initiative: number = 0;
+    private initiative: number = 1;
     get Initiative(): number {
-        return this.Dexterity.Modifier + this.initiative;
+        return this.initiative;
     }
     set Initiative(value: number) {
-        this.initiative = value;
+        if (value < 1) {
+            this.initiative = 1;
+        } else if (this.initiative > 20) {
+            this.initiative = 20;
+        } else {
+            this.initiative = value;
+        }
     }
 
     Inspiration: number = 0;
@@ -30,7 +36,8 @@ export default class CharacterSheet {
     Level: number = 1;
 
     get PassivePerception(): number {
-        if (this.Skills.includes(Skills.Perception)) {
+        const perception = this.Skills.find((skill) => skill.constructor.name === 'Perception');
+        if (perception?.IsProficient) {
             return 10 + this.ProficiencyBonus + this.Wisdom.Modifier;
         }
 
@@ -60,8 +67,6 @@ export default class CharacterSheet {
     }
 
     Race: Races = Races.Aarakocra;
-
-    Skills: Skills[] = [];
 
     Speed: number = 0;
 
@@ -94,12 +99,38 @@ export default class CharacterSheet {
 
     // Abilities ---------------------------------------------------------------
 
+    get Abilities() {
+        return [this.Strength, this.Dexterity, this.Constitution, this.Intelligence, this.Wisdom, this.Charisma];
+    }
     Strength: Strength = new Strength();
     Dexterity: Dexterity = new Dexterity();
     Constitution: Constitution = new Constitution();
     Intelligence: Intelligence = new Intelligence();
     Wisdom: Wisdom = new Wisdom();
     Charisma: Charisma = new Charisma();
+
+    // Skills ------------------------------------------------------------------
+
+    // TODO: Funktioniert aktuell nicht
+    get Skills(): Skill.Skill[] {
+        let skills = [
+            ...this.Strength.Skills,
+            ...this.Dexterity.Skills,
+            ...this.Intelligence.Skills,
+            ...this.Wisdom.Skills,
+            ...this.Charisma.Skills
+        ];
+        skills.sort((a, b) => {
+            if (a.Name < b.Name) {
+                return -1;
+            }
+            if (a.Name > b.Name) {
+                return 1;
+            }
+            return 0;
+        });
+        return skills;
+    }
 
     // Hit Points --------------------------------------------------------------
 
@@ -171,8 +202,11 @@ export default class CharacterSheet {
     AttacksAndSpellcasting: string = '';
     EquipmentAndCharacterNotes: string = '';
     FeaturesAndTraits: string = '';
-    Flaws = '';
-    Ideals: string = '';
     OtherProficienciesAndLanguages: string = '';
-    PersonalityTraits: string = '';
+    // TODO: gegen Notes austauschen
+    // Flaws = '';
+    // Ideals: string = '';
+    // Bonds: string = '';
+    // PersonalityTraits: string = '';
+    Notes: string = '';
 }

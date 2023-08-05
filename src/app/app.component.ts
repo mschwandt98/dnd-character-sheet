@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 import { DataService } from './data.service';
 
@@ -8,9 +9,18 @@ import { DataService } from './data.service';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    constructor(private data: DataService) {}
+    constructor(private sanitizer: DomSanitizer, private data: DataService) {}
 
-    logCharacterSheet() {
-        console.log(this.data);
+    loadCharacterSheet(e: Event) {
+        let fileReader = new FileReader();
+        fileReader.onload = () => this.data.importSheet(fileReader.result);
+        fileReader.readAsText((e?.target as any).files?.item(0));
+    }
+
+    downloadJsonHref: SafeUrl | null = null;
+    saveCharacterSheet() {
+        let json = this.data.getExportData();
+        let uri = this.sanitizer.bypassSecurityTrustUrl('data:text/json;charset=UTF-8,' + encodeURIComponent(json));
+        this.downloadJsonHref = uri;
     }
 }

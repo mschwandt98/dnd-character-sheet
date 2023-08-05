@@ -1,0 +1,63 @@
+:host {
+    display: block;
+    position: relative;
+}
+
+ul {
+    display: grid;
+    list-style: none;
+    position: absolute;
+    top: 2%;
+    right: 10%;
+    bottom: 6%;
+    left: 10%;
+}
+
+li {
+    align-items: center;
+    display: flex;
+    gap: 2%;
+}
+
+label:has(input[type='checkbox']) {
+    border: 0.15vw solid black;
+    border-radius: 50%;
+    position: relative;
+    height: 1vw;
+    width: 1vw;
+
+    &:has(input[type='checkbox']:focus-visible) {
+        background-color: rgba(black, 0.2);
+    }
+
+    &:has(input[type='checkbox']:checked)::after {
+        background-color: black;
+        border-radius: inherit;
+        content: '';
+        position: absolute;
+        inset: 15%;
+    }
+}
+
+input:not([type='checkbox']) {
+    background-image: url('/assets/Attack Bonus.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    border: 0;
+    font-size: 1vw;
+    text-align: center;
+    height: 1.5em;
+    width: 3em;
+}
+
+label {
+    text-transform: capitalize;
+}
+
+.component-name {
+    text-align: center;
+    position: absolute;
+    top: 95%;
+    right: 0;
+    left: 0;
+}

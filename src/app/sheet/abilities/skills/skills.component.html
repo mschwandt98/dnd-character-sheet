@@ -1,0 +1,29 @@
+<img
+    src="assets/Skills.svg"
+    alt="Skills"
+/>
+<ul>
+    <ng-container *ngFor="let ability of data.Abilities">
+        <li
+            *ngFor="let skill of ability.Skills"
+            class="skill"
+        >
+            <label>
+                <input
+                    id="SkillProf"
+                    type="checkbox"
+                    [(ngModel)]="skill.IsProficient"
+                />
+            </label>
+            <input
+                [id]="skill.Slug + 'SavingThrow'"
+                [value]="skill.IsProficient | proficient : ability.Modifier"
+                type="number"
+                readonly
+                tabIndex="-1"
+            />
+            <label [for]="skill.Slug + 'SavingThrow'">{{ skill.Name }}</label>
+        </li>
+    </ng-container>
+</ul>
+<div class="component-name">Skills</div>

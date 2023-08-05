@@ -1,0 +1,57 @@
+<div class="container">
+    <ul class="abilities">
+        <li
+            *ngFor="let ability of data.Abilities"
+            class="ability"
+        >
+            <dnd-ability
+                [name]="ability.constructor.name"
+                [modifier]="ability.Modifier"
+                [(score)]="ability.Score"
+            ></dnd-ability>
+        </li>
+    </ul>
+    <div>
+        <div class="inspiration">
+            <img
+                src="assets/Inspiration.svg"
+                alt="Inspiration Box"
+            />
+            <input
+                id="inspiration"
+                [(ngModel)]="data.Inspiration"
+                type="number"
+            />
+            <label for="inspiration">Inspiration</label>
+        </div>
+        <div class="proficiency-bonus">
+            <img
+                src="assets/Proficiency Bonus.svg"
+                alt="Proficiency Bonus Box"
+            />
+            <input
+                id="proficiency-bonus"
+                [value]="data.ProficiencyBonus"
+                type="number"
+                readonly
+            />
+            <label for="proficiency-bonus">Proficiency Bonus</label>
+        </div>
+        <dnd-saving-throws></dnd-saving-throws>
+        <dnd-skills></dnd-skills>
+    </div>
+</div>
+<div class="passive-perception">
+    <img
+        src="assets/Passive Perception.svg"
+        alt="Passive Perception Box"
+    />
+    <input
+        id="passive-perception"
+        [value]="data.PassivePerception"
+        type="number"
+        readonly
+        tabindex="-1"
+    />
+    <label for="passive-perception">Passive Perception</label>
+</div>

@@ -1,0 +1,58 @@
+.current-hit-points,
+.temporary-hit-points {
+    position: relative;
+}
+
+input {
+    border: 0;
+    font-size: 1.5vw;
+    text-align: center;
+
+    &#current-hit-points,
+    &#temporary-hit-points {
+        font-size: 5vw;
+        position: absolute;
+        right: 1.5%;
+        bottom: 20%;
+        left: 1.5%;
+    }
+
+    &#current-hit-points {
+        top: 20%;
+    }
+
+    &#temporary-hit-points {
+        top: 7%;
+    }
+}
+
+label {
+    &[for='current-hit-points'],
+    &[for='temporary-hit-points'] {
+        text-align: center;
+        position: absolute;
+        right: 0;
+        bottom: 5%;
+        left: 0;
+    }
+}
+
+.max-hit-points {
+    align-items: center;
+    display: grid;
+    gap: 0.5vw;
+    grid-template-columns: auto 1fr;
+    position: absolute;
+    top: 3%;
+    right: 10%;
+    bottom: 80%;
+    left: 10%;
+
+    > * {
+        min-width: 0;
+    }
+
+    input {
+        border-bottom: 2px solid gray;
+    }
+}

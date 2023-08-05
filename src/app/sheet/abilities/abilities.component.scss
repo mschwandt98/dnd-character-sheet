@@ -1,0 +1,85 @@
+.container {
+    display: grid;
+    gap: 1vw;
+    grid-template-columns: 1fr 2fr;
+}
+
+.abilities {
+    display: grid;
+    list-style: none;
+    padding: 2vw 0;
+}
+
+.proficiency-bonus,
+.inspiration,
+.passive-perception {
+    position: relative;
+
+    input,
+    label {
+        position: absolute;
+    }
+
+    input {
+        background-color: transparent;
+        border: 0;
+        font-size: 3.5vw;
+        text-align: center;
+    }
+
+    label {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.proficiency-bonus {
+    input {
+        border-radius: 100%;
+        top: 8%;
+        right: 73%;
+        bottom: 10%;
+        left: 1.5%;
+    }
+
+    label {
+        top: 20%;
+        bottom: 20%;
+        left: 28.5%;
+        right: 0;
+    }
+}
+
+.inspiration {
+    input {
+        top: 5%;
+        right: 76.5%;
+        bottom: 8%;
+        left: 1.5%;
+    }
+
+    label {
+        top: 15%;
+        bottom: 18%;
+        left: 25%;
+        right: 0;
+    }
+}
+
+.passive-perception {
+    input {
+        border-radius: 30%;
+        top: 6%;
+        right: 83%;
+        bottom: 11%;
+        left: 1%;
+    }
+
+    label {
+        top: 15%;
+        bottom: 18%;
+        left: 20%;
+        right: 0;
+    }
+}

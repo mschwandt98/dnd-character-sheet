@@ -1,0 +1,50 @@
+<img
+    src="assets/Box Rectangle.svg"
+    alt="Death Saves"
+/>
+<div class="death-saves">
+    <div class="label">Successes</div>
+    <div class="death-saves-successes">
+        <div
+            class="death-save-checkbox"
+            *ngFor="let success of successes; let i = index"
+        >
+            <input
+                type="checkbox"
+                [id]="'death-save-success-checkbox-' + i"
+                [(ngModel)]="successes[i].value"
+                (change)="updateDeathSaves('success')"
+            />
+            <label
+                [for]="'death-save-success-checkbox-' + i"
+                role="checkbox"
+                [attr.aria-checked]="success ? 'true' : 'false'"
+                (keydown)="clickOnSpace($event)"
+                tabindex="0"
+            ></label>
+        </div>
+    </div>
+
+    <div class="label">Failures</div>
+    <div class="death-saves-failures">
+        <div
+            class="death-save-checkbox"
+            *ngFor="let failure of failures; let i = index"
+        >
+            <input
+                type="checkbox"
+                [id]="'death-save-failure-checkbox-' + i"
+                [(ngModel)]="failures[i].value"
+                (change)="updateDeathSaves('failure')"
+            />
+            <label
+                [for]="'death-save-failure-checkbox-' + i"
+                role="checkbox"
+                [attr.aria-checked]="failure ? 'true' : 'false'"
+                (keydown)="clickOnSpace($event)"
+                tabindex="0"
+            ></label>
+        </div>
+    </div>
+</div>
+<div class="component-name">Death Saves</div>

@@ -1,0 +1,28 @@
+:host {
+    margin-top: 1vw;
+}
+
+input,
+label {
+    position: absolute;
+}
+
+input {
+    border: 0;
+    background-color: transparent;
+    font-size: 3.5vw;
+    text-align: center;
+    top: 10%;
+    right: 7%;
+    bottom: 25%;
+    left: 7%;
+}
+
+label {
+    margin-inline: auto;
+    max-width: 60%;
+    right: 0;
+    bottom: 15%;
+    left: 0;
+    text-align: center;
+}

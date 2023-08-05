@@ -1,0 +1,24 @@
+input,
+label {
+    position: absolute;
+}
+
+input {
+    border: 0;
+    background-color: transparent;
+    font-size: 3.5vw;
+    text-align: center;
+    top: 8%;
+    right: 15%;
+    bottom: 40%;
+    left: 15%;
+}
+
+label {
+    margin-inline: auto;
+    max-width: 60%;
+    right: 0;
+    bottom: 22%;
+    left: 0;
+    text-align: center;
+}

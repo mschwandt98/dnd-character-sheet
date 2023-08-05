@@ -1,0 +1,27 @@
+<img
+    src="assets/Saving Throws.svg"
+    alt="Saving Throws"
+/>
+<ul>
+    <li
+        *ngFor="let ability of data.Abilities"
+        class="ability"
+    >
+        <label>
+            <input
+                [id]="ability.constructor.name + 'SavingThrowProf'"
+                type="checkbox"
+                [(ngModel)]="ability.SavingThrows"
+            />
+        </label>
+        <input
+            [id]="ability.constructor.name + 'SavingThrow'"
+            [value]="ability.Modifier"
+            type="number"
+            readonly
+            tabIndex="-1"
+        />
+        <label [for]="ability.constructor.name + 'SavingThrow'">{{ ability.constructor.name }}</label>
+    </li>
+</ul>
+<div class="component-name">Saving Throws</div>

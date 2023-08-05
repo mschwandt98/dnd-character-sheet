@@ -1,0 +1,23 @@
+<img
+    src="assets/Attribute.svg"
+    [alt]="name + ' Box'"
+/>
+<input
+    [value]="modifier"
+    class="modifier"
+    type="number"
+    tabindex="-1"
+    readonly
+/>
+<input
+    [id]="name + '-score'"
+    class="score"
+    [value]="score"
+    (input)="updateScore($event)"
+    type="number"
+    min="0"
+    max="20"
+/>
+<label [for]="name + '-score'">
+    {{ name }}
+</label>
