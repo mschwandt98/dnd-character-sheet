@@ -15,7 +15,10 @@ export class OptionsComponent {
 
     downloadJsonHref: SafeUrl | null = null;
 
-    constructor(private sanitizer: DomSanitizer, private data: DataService) {}
+    constructor(
+        private sanitizer: DomSanitizer,
+        private data: DataService
+    ) {}
 
     closeDialog() {
         this.dialog.nativeElement.close();
