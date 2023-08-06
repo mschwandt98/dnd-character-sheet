@@ -22,7 +22,9 @@
                 readonly
                 tabIndex="-1"
             />
-            <label [for]="skill.Slug + 'SavingThrow'">{{ skill.Name }}</label>
+            <label [for]="skill.Slug + 'SavingThrow'">{{
+                skill.Name + ' (' + ability.Name.substring(0, 3).toUpperCase() + ')'
+            }}</label>
         </li>
     </ng-container>
 </ul>

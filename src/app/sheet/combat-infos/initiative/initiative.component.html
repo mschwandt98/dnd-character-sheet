@@ -2,12 +2,13 @@
     src="assets/Box Square.svg"
     alt="Initiative"
 />
-<div class="dex-modifier">+{{ data.Dexterity.Modifier }}</div>
+<div class="dex-modifier">{{ data.Dexterity.Modifier < 0 ? '' : '+' }}{{ data.Dexterity.Modifier }}</div>
 <input
     [(ngModel)]="data.Initiative"
     id="initiative"
     type="number"
     min="1"
     max="20"
+    [tooltip]="'You roll 1d20 and add your Dexterity Modifier (' + data.Dexterity.Modifier + ')'"
 />
 <label for="initiative">Initiative</label>

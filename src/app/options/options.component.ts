@@ -14,6 +14,7 @@ export class OptionsComponent {
     @ViewChild('optionsDialog', { static: true }) dialog!: ElementRef<HTMLDialogElement>;
 
     downloadJsonHref: SafeUrl | null = null;
+    showTooltips: boolean = localStorage.getItem('showTooltips') === 'true';
 
     constructor(
         private sanitizer: DomSanitizer,
@@ -61,5 +62,10 @@ export class OptionsComponent {
         let json = this.data.getExportData();
         let uri = this.sanitizer.bypassSecurityTrustUrl('data:text/json;charset=UTF-8,' + encodeURIComponent(json));
         this.downloadJsonHref = uri;
+    }
+
+    toggleTooltips(e: Event) {
+        this.showTooltips = (e.target as HTMLInputElement).checked;
+        localStorage.setItem('showTooltips', this.showTooltips.toString());
     }
 }

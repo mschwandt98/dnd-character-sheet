@@ -42,7 +42,6 @@ export class DataService extends CharacterSheet {
         this.Background = data.Background;
         this.CharacterName = data.CharacterName;
         this.Class = data.Class;
-        this.ExperiencePoints = data.ExperiencePoints;
         this.Initiative = data.Initiative;
         this.Inspiration = data.Inspiration;
         this.Level = data.Level;

@@ -15,8 +15,6 @@ export default class CharacterSheet {
 
     Class: Classes = Classes.Artificer;
 
-    ExperiencePoints: number = 0;
-
     private initiative: number = 1;
     get Initiative(): number {
         return this.initiative;
@@ -33,7 +31,19 @@ export default class CharacterSheet {
 
     Inspiration: number = 0;
 
-    Level: number = 1;
+    private level: number = 1;
+    get Level(): number {
+        return this.level;
+    }
+    set Level(value: number) {
+        if (value < 1) {
+            this.level = 1;
+        } else if (value > 20) {
+            this.level = 20;
+        } else {
+            this.level = value;
+        }
+    }
 
     get PassivePerception(): number {
         const perception = this.Skills.find((skill) => skill.Name === Skill.Perception.name);

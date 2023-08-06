@@ -8,7 +8,6 @@ export default class CharacterSheetDto {
     Background: string;
     CharacterName: string;
     Class: Classes;
-    ExperiencePoints: number;
     Initiative: number;
     Inspiration: number;
     Level: number;
@@ -41,7 +40,6 @@ export default class CharacterSheetDto {
         this.Background = data.Background;
         this.CharacterName = data.CharacterName;
         this.Class = Object.keys(Classes).includes(data.Class) ? data.Class : Classes.Artificer;
-        this.ExperiencePoints = data.ExperiencePoints < 0 ? 0 : data.ExperiencePoints;
         this.Initiative = data.Initiative < 1 ? 1 : data.Initiative;
         this.Inspiration = data.Inspiration < 0 ? 0 : data.Inspiration;
         this.Level = data.Level < 1 ? 1 : data.Level;

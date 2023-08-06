@@ -37,6 +37,17 @@
     <hr />
     <div>
         <label>
+            {{ showTooltips ? 'Hide tooltips' : 'Show tooltips' }}
+            <input
+                type="checkbox"
+                (click)="toggleTooltips($event)"
+            />
+        </label>
+        <p>Tooltips give you more information about some fields on your character sheet.</p>
+    </div>
+    <hr />
+    <div>
+        <label>
             Upload character sheet
             <input
                 type="file"
