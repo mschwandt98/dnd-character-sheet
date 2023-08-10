@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Subscription, interval } from 'rxjs';
+import { Subject, interval } from 'rxjs';
 
 import CharacterSheet from './models/CharacterSheet';
 import CharacterSheetDto from './models/CharacterSheetDto';
@@ -10,11 +10,13 @@ import { Charisma, Constitution, Dexterity, Intelligence, Strength, Wisdom } fro
     providedIn: 'root'
 })
 export class DataService extends CharacterSheet {
+    saveRunning: Subject<boolean> = new Subject<boolean>();
+
     constructor() {
         super();
 
-        // Alle 10 Sekunden den aktuellen Charakterbogen im localStorage speichern
-        interval(10000).subscribe(() => {
+        // Alle 60 Sekunden den aktuellen Charakterbogen im localStorage speichern
+        interval(60000).subscribe(() => {
             this.saveLocal();
         });
     }
@@ -107,6 +109,10 @@ export class DataService extends CharacterSheet {
     }
 
     saveLocal() {
+        this.saveRunning.next(true);
         localStorage.setItem('characterSheet', this.getExportData());
+        setTimeout(() => {
+            this.saveRunning.next(false);
+        }, 500);
     }
 }

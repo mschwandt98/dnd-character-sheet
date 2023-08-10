@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
@@ -10,16 +10,22 @@ import CharacterSheet from '../models/CharacterSheet';
     templateUrl: './options.component.html',
     styleUrls: ['./options.component.scss']
 })
-export class OptionsComponent {
+export class OptionsComponent implements OnInit {
     @ViewChild('optionsDialog', { static: true }) dialog!: ElementRef<HTMLDialogElement>;
 
     downloadJsonHref: SafeUrl | null = null;
     showTooltips: boolean = localStorage.getItem('showTooltips') === 'true';
 
+    saving: boolean = false;
+
     constructor(
         private sanitizer: DomSanitizer,
         private data: DataService
     ) {}
+
+    ngOnInit(): void {
+        this.data.saveRunning.subscribe((saving) => (this.saving = saving));
+    }
 
     closeDialog() {
         this.dialog.nativeElement.close();
@@ -40,6 +46,12 @@ export class OptionsComponent {
         }
     }
 
+    downloadCharacterSheet() {
+        let json = this.data.getExportData();
+        let uri = this.sanitizer.bypassSecurityTrustUrl('data:text/json;charset=UTF-8,' + encodeURIComponent(json));
+        this.downloadJsonHref = uri;
+    }
+
     loadCharacterSheet(e: Event) {
         // TODO: Fehler- oder Erfolgsmeldung anzeigen
 
@@ -54,18 +66,15 @@ export class OptionsComponent {
         this.data.saveLocal();
     }
 
+    toggleTooltips() {
+        localStorage.setItem('showTooltips', this.showTooltips.toString());
+    }
+
     printCharacterSheet() {
         window.print();
     }
 
     saveCharacterSheet() {
-        let json = this.data.getExportData();
-        let uri = this.sanitizer.bypassSecurityTrustUrl('data:text/json;charset=UTF-8,' + encodeURIComponent(json));
-        this.downloadJsonHref = uri;
-    }
-
-    toggleTooltips(e: Event) {
-        this.showTooltips = (e.target as HTMLInputElement).checked;
-        localStorage.setItem('showTooltips', this.showTooltips.toString());
+        this.data.saveLocal();
     }
 }
