@@ -10,3 +10,43 @@ h1 {
     width: 1px;
     word-wrap: normal !important;
 }
+
+@media screen and (max-width: 1279px) {
+    $width: 48px;
+
+    dnd-options {
+        flex-direction: column;
+        position: fixed;
+        inset: 0 auto 0 0;
+        width: $width;
+    }
+
+    dnd-sheet {
+        margin: 0 0 0 $width;
+    }
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    $height: 48px;
+
+    dnd-options {
+        flex-direction: row;
+        justify-content: flex-end;
+        position: fixed;
+        inset: auto 0 0 0;
+        height: $height;
+        width: 100%;
+    }
+
+    dnd-sheet {
+        margin: 0 0 $height 0;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    dnd-options {
+        justify-content: flex-end;
+        inset: 0 0 auto 0;
+        position: sticky;
+    }
+}
