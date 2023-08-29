@@ -11,19 +11,16 @@ h1 {
     word-wrap: normal !important;
 }
 
-@media screen and (max-width: 1279px) {
-    $width: 48px;
+$width: 48px;
+dnd-options {
+    flex-direction: column;
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: $width;
+}
 
-    dnd-options {
-        flex-direction: column;
-        position: fixed;
-        inset: 0 auto 0 0;
-        width: $width;
-    }
-
-    dnd-sheet {
-        margin: 0 0 0 $width;
-    }
+dnd-sheet {
+    margin: 0 0 0 $width;
 }
 
 @media screen and (max-width: 768px) and (orientation: portrait) {
@@ -43,10 +40,8 @@ h1 {
     }
 }
 
-@media screen and (min-width: 1280px) {
-    dnd-options {
-        justify-content: flex-end;
-        inset: 0 0 auto 0;
-        position: sticky;
+@media print {
+    dnd-sheet {
+        margin: 0;
     }
 }

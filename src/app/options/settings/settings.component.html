@@ -1,0 +1,82 @@
+<dialog
+    #settingsDialog
+    aria-labelledby="dnd-options-title"
+    aria-describedby="dnd-options-description"
+>
+    <header>
+        <button
+            title="Close Settings"
+            type="button"
+            (click)="closeDialog()"
+        >
+            <img
+                src="assets/close.svg"
+                alt="Cross"
+                loading="lazy"
+            />
+        </button>
+    </header>
+    <img
+        loading="lazy"
+        src="assets/Dragon Head.svg"
+        alt="Head of DnD Dragon"
+    />
+    <h2 id="dnd-options-title">Settings</h2>
+    <p id="dnd-options-description">Here you can adjust the settings for your character sheet.</p>
+    <hr />
+    <div>
+        <label>
+            <input
+                type="checkbox"
+                [(ngModel)]="showTooltips"
+                (change)="toggleTooltips()"
+            />
+            <span></span>
+            Show tooltips
+        </label>
+        <p>Tooltips give you more information about some fields on your character sheet.</p>
+    </div>
+    <hr />
+    <div>
+        <label>
+            Upload character sheet
+            <input
+                type="file"
+                (change)="loadCharacterSheet($event)"
+                accept="application/json"
+            />
+        </label>
+        <p>Upload an existing character sheet from your device.</p>
+    </div>
+    <hr />
+    <div>
+        <label>
+            <a
+                [href]="downloadJsonHref"
+                download="dnd-character-sheet.json"
+                (click)="downloadCharacterSheet()"
+            >
+                Download character sheet
+            </a>
+        </label>
+        <p>Download the configuration of the current character sheet as a JSON file.</p>
+    </div>
+    <hr />
+    <div>
+        <label>
+            Print character sheet
+            <button (click)="printCharacterSheet()"></button>
+        </label>
+        <p>Print out your character sheet in A4 format.</p>
+    </div>
+    <hr />
+    <div>
+        <label>
+            Create new character sheet
+            <button (click)="createNewCharacterSheet()"></button>
+        </label>
+        <p>
+            Create a new character sheet. <br /><strong>Attention:</strong> Your current character sheet will be lost.
+        </p>
+    </div>
+</dialog>

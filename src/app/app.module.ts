@@ -29,6 +29,7 @@ import { OtherProficienciesAndLanguagesComponent } from './sheet/other-proficien
 import { ProficientPipe } from './sheet/abilities/skills/proficient.pipe';
 import { OptionsComponent } from './options/options.component';
 import { TooltipModule } from './tooltip/tooltip.module';
+import { SettingsComponent } from './options/settings/settings.component';
 
 @NgModule({
     declarations: [
@@ -52,7 +53,8 @@ import { TooltipModule } from './tooltip/tooltip.module';
         EquipmentAndCharacterNotesComponent,
         OtherProficienciesAndLanguagesComponent,
         ProficientPipe,
-        OptionsComponent
+        OptionsComponent,
+        SettingsComponent
     ],
     imports: [AppRoutingModule, BrowserModule, FormsModule, TooltipModule],
     providers: [
