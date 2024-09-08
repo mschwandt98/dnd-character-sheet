@@ -43,9 +43,7 @@ export class Dexterity extends Ability {
 
     constructor() {
         super();
-        this.skills.push(new Skill.Acrobatics());
-        this.skills.push(new Skill.SleightOfHand());
-        this.skills.push(new Skill.Stealth());
+        this.skills.push(new Skill.Acrobatics(), new Skill.SleightOfHand(), new Skill.Stealth());
     }
 }
 
@@ -58,11 +56,13 @@ export class Intelligence extends Ability {
 
     constructor() {
         super();
-        this.skills.push(new Skill.Arcana());
-        this.skills.push(new Skill.History());
-        this.skills.push(new Skill.Investigation());
-        this.skills.push(new Skill.Nature());
-        this.skills.push(new Skill.Religion());
+        this.skills.push(
+            new Skill.Arcana(),
+            new Skill.History(),
+            new Skill.Investigation(),
+            new Skill.Nature(),
+            new Skill.Religion()
+        );
     }
 }
 
@@ -71,11 +71,13 @@ export class Wisdom extends Ability {
 
     constructor() {
         super();
-        this.skills.push(new Skill.AnimalHandling());
-        this.skills.push(new Skill.Insight());
-        this.skills.push(new Skill.Medicine());
-        this.skills.push(new Skill.Perception());
-        this.skills.push(new Skill.Survival());
+        this.skills.push(
+            new Skill.AnimalHandling(),
+            new Skill.Insight(),
+            new Skill.Medicine(),
+            new Skill.Perception(),
+            new Skill.Survival()
+        );
     }
 }
 
@@ -84,9 +86,11 @@ export class Charisma extends Ability {
 
     constructor() {
         super();
-        this.skills.push(new Skill.Deception());
-        this.skills.push(new Skill.Intimidation());
-        this.skills.push(new Skill.Performance());
-        this.skills.push(new Skill.Persuasion());
+        this.skills.push(
+            new Skill.Deception(),
+            new Skill.Intimidation(),
+            new Skill.Performance(),
+            new Skill.Persuasion()
+        );
     }
 }

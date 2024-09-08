@@ -1,25 +1,4 @@
 <button
-    type="button"
-    (click)="saveCharacterSheet()"
-    [disabled]="saving"
-    title="Save character sheet"
->
-    <img
-        *ngIf="saving; else syncSavedLocally"
-        src="assets/sync.svg"
-        alt="Saving changes"
-        loading="lazy"
-        class="rotate-animation"
-    />
-    <ng-template #syncSavedLocally>
-        <img
-            src="assets/sync-saved-locally.svg"
-            alt="Changes saved locally"
-            loading="lazy"
-        />
-    </ng-template>
-</button>
-<button
     title="Open Settings"
     type="button"
     (click)="openDialog()"
