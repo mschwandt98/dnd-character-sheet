@@ -71,10 +71,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "dnd-character-sheet:build:production"
+                            "buildTarget": "dnd-character-sheet:build:production"
                         },
                         "development": {
-                            "browserTarget": "dnd-character-sheet:build:development"
+                            "buildTarget": "dnd-character-sheet:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "dnd-character-sheet:build"
+                        "buildTarget": "dnd-character-sheet:build"
                     }
                 },
                 "test": {
