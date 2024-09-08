@@ -3,31 +3,29 @@
     alt="Skills"
 />
 <ul>
-    <ng-container *ngFor="let ability of data.Abilities">
-        <li
-            *ngFor="let skill of ability.Skills"
-            class="skill"
-        >
-            <label>
-                <input
-                    [id]="skill.Slug + 'SkillProf'"
-                    type="checkbox"
-                    [(ngModel)]="skill.IsProficient"
-                />
-            </label>
+    <li
+        *ngFor="let skill of data.Skills"
+        class="skill"
+    >
+        <label>
             <input
-                [value]="skill.IsProficient | proficient: ability.Modifier"
-                type="number"
-                readonly
-                tabIndex="-1"
-                [attr.aria-labelledby]="skill.Slug + 'label'"
+                [id]="skill.Slug + 'SkillProf'"
+                type="checkbox"
+                [(ngModel)]="skill.IsProficient"
             />
-            <label
-                [id]="skill.Slug + 'label'"
-                [for]="skill.Slug + 'SkillProf'"
-                >{{ skill.Name + ' (' + ability.Name.substring(0, 3).toUpperCase() + ')' }}</label
-            >
-        </li>
-    </ng-container>
+        </label>
+        <input
+            [value]="skill.IsProficient | proficient: skill.ability.Modifier"
+            type="number"
+            readonly
+            tabIndex="-1"
+            [attr.aria-labelledby]="skill.Slug + 'label'"
+        />
+        <label
+            [id]="skill.Slug + 'label'"
+            [for]="skill.Slug + 'SkillProf'"
+            >{{ skill.Name + ' (' + skill.ability.Name.substring(0, 3).toUpperCase() + ')' }}</label
+        >
+    </li>
 </ul>
 <div class="component-name">Skills</div>

@@ -1,9 +1,13 @@
+import { Ability } from './Ability';
+
 export abstract class Skill {
     IsProficient: boolean = false;
 
     readonly Slug: string = this.constructor.name;
 
     abstract readonly Name: string;
+
+    constructor(public readonly ability: Ability) {}
 }
 
 export class Acrobatics extends Skill {
