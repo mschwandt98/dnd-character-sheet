@@ -19,8 +19,13 @@
             type="number"
             readonly
             tabIndex="-1"
+            [attr.aria-labelledby]="ability.Name + 'label'"
         />
-        <label [for]="ability.Name + 'SavingThrowProf'">{{ ability.Name }}</label>
+        <label
+            [id]="ability.Name + 'label'"
+            [for]="ability.Name + 'SavingThrowProf'"
+            >{{ ability.Name }}</label
+        >
     </li>
 </ul>
 <div class="component-name">Saving Throws</div>

@@ -8,6 +8,7 @@
     type="number"
     tabindex="-1"
     readonly
+    [attr.aria-labelledby]="name + '-label'"
 />
 <input
     [id]="name + '-score'"
@@ -18,6 +19,9 @@
     min="0"
     max="20"
 />
-<label [for]="name + '-score'">
+<label
+    [id]="name + '-label'"
+    [for]="name + '-score'"
+>
     {{ name }}
 </label>

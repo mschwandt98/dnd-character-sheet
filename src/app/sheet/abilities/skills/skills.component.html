@@ -20,10 +20,13 @@
                 type="number"
                 readonly
                 tabIndex="-1"
+                [attr.aria-labelledby]="skill.Slug + 'label'"
             />
-            <label [for]="skill.Slug + 'SkillProf'">{{
-                skill.Name + ' (' + ability.Name.substring(0, 3).toUpperCase() + ')'
-            }}</label>
+            <label
+                [id]="skill.Slug + 'label'"
+                [for]="skill.Slug + 'SkillProf'"
+                >{{ skill.Name + ' (' + ability.Name.substring(0, 3).toUpperCase() + ')' }}</label
+            >
         </li>
     </ng-container>
 </ul>

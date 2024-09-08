@@ -42,14 +42,12 @@ export class SettingsComponent {
     }
 
     loadCharacterSheet(e: Event) {
-        // TODO: Fehler- oder Erfolgsmeldung anzeigen
-
         try {
             let fileReader = new FileReader();
             fileReader.onload = () => this.data.importSheet(fileReader.result);
             fileReader.readAsText((e?.target as any).files?.item(0));
         } catch (error) {
-            return;
+            alert('An error occurred while loading the character sheet.');
         }
 
         this.data.saveLocal();
