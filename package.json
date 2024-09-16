@@ -1,13 +1,16 @@
 {
     "name": "dnd-character-sheet",
-    "version": "0.0.0",
+    "version": "1.0.1",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
         "start:network": "ng serve --host 0.0.0.0",
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
-        "format": "npx prettier --write ."
+        "format": "npx prettier --write .",
+        "bubblewrap:init": "npx bubblewrap init --manifest=\"https://dnd.marianschwandt.de/manifest.webmanifest\"",
+        "bubblewrap:build": "npx bubblewrap build",
+        "bubblewrap:update": "npx bubblewrap update"
     },
     "private": true,
     "dependencies": {
@@ -27,6 +30,7 @@
         "@angular-devkit/build-angular": "^18.2.3",
         "@angular/cli": "~18.2.3",
         "@angular/compiler-cli": "^18.2.3",
+        "@bubblewrap/cli": "^1.22.0",
         "@types/jasmine": "~4.3.0",
         "jasmine-core": "~4.5.0",
         "karma": "~6.4.0",

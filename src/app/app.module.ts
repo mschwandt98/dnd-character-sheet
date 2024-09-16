@@ -1,9 +1,7 @@
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { SheetComponent } from './sheet/sheet.component';
@@ -56,13 +54,7 @@ import { SettingsComponent } from './options/settings/settings.component';
         OptionsComponent,
         SettingsComponent
     ],
-    imports: [AppRoutingModule, BrowserModule, FormsModule, TooltipModule],
-    providers: [
-        {
-            provide: LocationStrategy,
-            useClass: HashLocationStrategy
-        }
-    ],
+    imports: [BrowserModule, FormsModule, TooltipModule],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
