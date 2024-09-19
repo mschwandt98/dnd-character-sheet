@@ -47,7 +47,7 @@ export class SettingsComponent {
             fileReader.onload = () => this.data.importSheet(fileReader.result);
             fileReader.readAsText((e?.target as any).files?.item(0));
         } catch (error) {
-            alert('An error occurred while loading the character sheet.');
+            alert('An error occurred while loading the character sheet. The file may be corrupted or not a valid character sheet.');
         }
 
         this.data.saveLocal();
