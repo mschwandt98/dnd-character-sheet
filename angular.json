@@ -41,7 +41,7 @@
                             "src/robots.txt",
                             "src/.htaccess",
                             "src/assets",
-                            "src/manifest.webmanifest"
+                            "src/manifest.json"
                         ],
                         "styles": ["src/styles.scss"],
                         "scripts": [],
