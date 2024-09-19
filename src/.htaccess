@@ -10,6 +10,8 @@
     AddOutputFilterByType DEFLATE application/rss+xml
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/x-icon
 </IfModule>
 
 AddDefaultCharset utf-8
@@ -33,7 +35,7 @@ AddCharset UTF-8 .js
         Header append Content-Encoding br
         Header append Vary Accept-Encoding
     </FilesMatch>
-    <FilesMatch "\.(ico|avif|webp|jpeg|jpg|png|css|js|ttf|br)$">
+    <FilesMatch "\.(ico|avif|webp|jpeg|jpg|png|svg|css|js|ttf|br)$">
         Header append Cache-Control "max-age=31536000, public"
     </FilesMatch>
 </IfModule>
