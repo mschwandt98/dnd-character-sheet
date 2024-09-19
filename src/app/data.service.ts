@@ -6,6 +6,19 @@ import CharacterSheet from './models/CharacterSheet';
 import CharacterSheetDto from './models/CharacterSheetDto';
 import { Charisma, Constitution, Dexterity, Intelligence, Strength, Wisdom } from './models/Ability';
 
+function circularReplacer() {
+    const seen = new WeakSet();
+    return (_key: string, value: any) => {
+        if (typeof value === "object" && value !== null) {
+            if (seen.has(value)) {
+                return;
+            }
+            seen.add(value);
+        }
+        return value;
+    };
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -13,28 +26,29 @@ export class DataService extends CharacterSheet {
     constructor() {
         super();
 
-        // Alle 10 Sekunden den aktuellen Charakterbogen im localStorage speichern
-        interval(10000).subscribe(() => {
+        // Alle 5 Sekunden den aktuellen Charakterbogen im localStorage speichern
+        interval(5000).subscribe(() => {
             this.saveLocal();
         });
     }
 
     getExportData(): string {
         let data = new CharacterSheetDto(this);
-        return JSON.stringify(data);
+        return JSON.stringify(data, circularReplacer());
     }
 
     importSheet(data: any) {
-        try {
-            if (data === null) {
-                throw new Error('No data found.');
-            }
+        if (!data) {
+            return
+        }
 
+        try {
             data = JSON.parse(data);
             data = new CharacterSheetDto(data);
         } catch (error) {
             console.error(error);
             // TODO: Fehlermeldung anzeigen
+            return
         }
 
         this.Alignment = data.Alignment;
