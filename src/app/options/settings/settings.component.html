@@ -53,7 +53,7 @@
         <label>
             <a
                 [href]="downloadJsonHref"
-                download="dnd-character-sheet.json"
+                [download]="downloadJsonName"
                 (click)="downloadCharacterSheet()"
             >
                 Download character sheet

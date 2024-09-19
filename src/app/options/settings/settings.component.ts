@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 import { DataService } from '../../data.service';
@@ -9,16 +9,21 @@ import CharacterSheet from '../../models/CharacterSheet';
     templateUrl: './settings.component.html',
     styleUrls: ['./settings.component.scss']
 })
-export class SettingsComponent {
+export class SettingsComponent implements OnInit {
     @ViewChild('settingsDialog', { static: true }) dialog!: ElementRef<HTMLDialogElement>;
 
     downloadJsonHref: SafeUrl | null = null;
+    downloadJsonName: string;
     showTooltips: boolean = localStorage.getItem('showTooltips') === 'true';
 
     constructor(
         private sanitizer: DomSanitizer,
         private data: DataService
     ) {}
+
+    ngOnInit() {
+        this.downloadJsonName = `dnd-character-sheet-${this.data.CharacterName.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.json`;
+    }
 
     closeDialog() {
         this.dialog.nativeElement.close();
