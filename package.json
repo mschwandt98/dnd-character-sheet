@@ -1,6 +1,6 @@
 {
     "name": "dnd-character-sheet",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
@@ -22,6 +22,7 @@
         "@angular/platform-browser": "^18.2.5",
         "@angular/platform-browser-dynamic": "^18.2.5",
         "@angular/router": "^18.2.5",
+        "@angular/service-worker": "^18.2.5",
         "rxjs": "~7.5.0",
         "tslib": "^2.3.0"
     },
