@@ -1,0 +1,47 @@
+{
+  "packageId": "xyz.appmaker.aswtpm",
+  "host": "dnd.marianschwandt.de",
+  "name": "DnD Character Sheet",
+  "launcherName": "DnD CS",
+  "display": "standalone",
+  "themeColor": "#FFFFFF",
+  "themeColorDark": "#000000",
+  "navigationColor": "#000000",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
+  "backgroundColor": "#E6E6E6",
+  "enableNotifications": true,
+  "startUrl": "/",
+  "iconUrl": "https://dnd.marianschwandt.de/assets/icons/icon-512x512.png",
+  "maskableIconUrl": "https://dnd.marianschwandt.de/assets/icons/icon-512x512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "C:\\_src\\dnd-character-sheet\\android.keystore",
+    "alias": "android"
+  },
+  "appVersionName": "4",
+  "appVersionCode": 4,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://dnd.marianschwandt.de/manifest.webmanifest",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://dnd.marianschwandt.de/",
+  "minSdkVersion": 19,
+  "orientation": "default",
+  "fingerprints": [
+    {
+      "value": "98:0E:B3:46:DB:31:7F:AD:11:0E:40:53:89:37:C3:4A:E5:0F:D5:77:CD:51:60:41:03:41:F8:A8:34:4A:C2:CE"
+    }
+  ],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "appVersion": "4"
+}

@@ -45,3 +45,5 @@ Thumbs.db
 .gradle/
 app/
 gradle/
+
+android.keystore
